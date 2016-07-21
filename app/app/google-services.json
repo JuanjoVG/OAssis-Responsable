@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "956899837813",
+    "firebase_url": "https://oassis-3058a.firebaseio.com",
+    "project_id": "oassis-3058a",
+    "storage_bucket": "oassis-3058a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956899837813:android:7ced054746f8df75",
+        "android_client_info": {
+          "package_name": "io.pros.roassis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "956899837813-hkrut5jr5p9gfd3e7kh8cmni0v9pcvdr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBehsH85VpYYXxelg7de8cYIGWnCRcxo1w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
