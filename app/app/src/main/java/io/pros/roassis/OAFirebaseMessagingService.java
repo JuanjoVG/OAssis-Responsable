@@ -12,6 +12,9 @@ import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
@@ -20,6 +23,7 @@ import com.google.firebase.messaging.RemoteMessage;
  */
 public class OAFirebaseMessagingService extends FirebaseMessagingService {
     private static final String TAG = "OAFBMessagingService";
+    public static final String LOCATION_CHILD = "locations";
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
@@ -32,10 +36,9 @@ public class OAFirebaseMessagingService extends FirebaseMessagingService {
         //Calling method to generate notification
         sendNotification(remoteMessage.getData().get("message"));
 
-        /*
-        * remoteMessage.getData().get("lat"),
-                remoteMessage.getData().get("lon")
-        * */
+        DatabaseReference mFirebaseDatabaseReference = FirebaseDatabase.getInstance().getReference();
+        mFirebaseDatabaseReference.child(LOCATION_CHILD).push().setValue(remoteMessage.getData().get("lat") + "," + remoteMessage.getData().get("lon"));
+
     }
 
     //This method is only generating push notification
